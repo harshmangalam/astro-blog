@@ -1,0 +1,53 @@
+---
+import ThemeToggler from "./ThemeToggler";
+const pathname = new URL(Astro.request.url).pathname;
+
+const links = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Blog",
+    href: "/blog",
+  },
+  {
+    name: "Projects",
+    href: "/projects",
+  },
+  {
+    name: "Snippets",
+    href: "/snippets",
+  },
+  {
+    name: "About",
+    href: "/about",
+  },
+];
+---
+
+<nav class="max-w-6xl w-full mx-auto flex justify-between items-center h-24">
+  <div>
+    <a href="/" class="text-2xl font-semibold">
+      <h1>H.Mangalam</h1>
+    </a>
+  </div>
+
+  <ul class="flex items-center space-x-4">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            class={`font-medium px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-lg text-gray-600 dark:text-gray-400 ${pathname === link.href ? "bg-gray-100 dark:bg-gray-700" : ""}`}
+            href={link.href}
+          >
+            {link.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <div>
+    <ThemeToggler client:load />
+  </div>
+</nav>
