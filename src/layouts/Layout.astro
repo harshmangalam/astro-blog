@@ -1,5 +1,7 @@
 ---
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar.astro";
+
+const {title} = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -8,12 +10,15 @@ import Navbar from "../components/Navbar";
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Harsh Mangalam</title>
+    <title>Harsh Mangalam | {title}</title>
   </head>
   <body class="dark:bg-gray-900 min-h-screen dark:text-white">
     <!-- navbar  -->
 
-    <Navbar client:load />
-    <slot />
+    <Navbar  />
+
+    <main class="max-w-6xl mx-auto py-8">
+      <slot />
+    </main>
   </body>
 </html>
