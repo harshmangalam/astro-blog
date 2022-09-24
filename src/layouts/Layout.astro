@@ -1,5 +1,5 @@
 ---
-import ThemeToggler from "../components/ThemeToggler";
+import Navbar from "../components/Navbar";
 ---
 
 <!DOCTYPE html>
@@ -11,7 +11,9 @@ import ThemeToggler from "../components/ThemeToggler";
     <title>Harsh Mangalam</title>
   </head>
   <body class="dark:bg-gray-900 min-h-screen dark:text-white">
-    <ThemeToggler client:load />
+    <!-- navbar  -->
+
+    <Navbar client:load />
     <slot />
   </body>
 </html>
