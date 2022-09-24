@@ -1,7 +1,8 @@
-import { createEffect, Show } from "solid-js";
+import {  Show } from "solid-js";
 import { createSignal } from "solid-js";
 import SunIcon from "./icons/SunIcon";
 import MoonIcon from "./icons/MoonIcon";
+import { onMount } from "solid-js";
 export default function ThemeToggler() {
   const [darkMode, setDarkMode] = createSignal(false);
 
@@ -17,7 +18,7 @@ export default function ThemeToggler() {
     setDarkMode(false);
   };
 
-  createEffect(() => {
+  onMount(() => {
     const hasThemeKey = "theme" in localStorage;
     const darkInStorage = localStorage.theme === "dark";
     const darkColorScheme = window.matchMedia(
