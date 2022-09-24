@@ -1,6 +1,6 @@
 export default function ThemeToggler() {
   const handleToggle = () => {
-    alert("Toggle");
+    document.documentElement.classList.add("dark");
   };
   return <button onClick={handleToggle}>Toggle</button>;
 }
