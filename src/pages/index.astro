@@ -1,7 +1,33 @@
 ---
+import BlogPost from "../components/BlogPost";
+import GridLayout from "../layouts/GridLayout.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Home">
+  <div
+    class="flex gap-6 items-center justify-evenly border dark:border-gray-800 p-6 rounded-md dark:bg-gray-800 bg-gray-100 shadow"
+  >
+    <div class="flex flex-col space-y-4">
+      <h2 class="text-4xl max-w-xl">
+        Explore technologies and build something amazing without reinventing the
+        wheel
+      </h2>
+    </div>
 
+    <div class="w-80 h-80 flex-none">
+      <img
+        src="https://avatars.githubusercontent.com/u/57381638?v=4"
+        alt="Harsh Mangalam"
+        class="w-full h-full rounded-full"
+      />
+    </div>
+  </div>
+
+  <div class="mt-16">
+    <h3 class="text-3xl font-semibold">Featured Posts</h3>
+    <GridLayout className="mt-8">
+      {[...new Array(3)].map((post) => <BlogPost />)}
+    </GridLayout>
+  </div>
 </Layout>
