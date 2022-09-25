@@ -2,16 +2,14 @@
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer";
 
-const { title } = Astro.props;
+// 1. The frontmatter prop gives access to frontmatter and other data
+const { frontmatter } = Astro.props;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Harsh Mangalam | {title}</title>
+    <!-- Add other Head elements here, like styles and meta tags. -->
+    <title>{frontmatter.title}</title>
   </head>
   <body class="dark:bg-gray-900 min-h-screen dark:text-white flex flex-col justify-between">
     <!-- navbar  -->

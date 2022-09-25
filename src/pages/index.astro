@@ -2,31 +2,12 @@
 import BlogPost from "../components/BlogPost";
 import GridLayout from "../layouts/GridLayout.astro";
 import Layout from "../layouts/Layout.astro";
+
+const posts = await Astro.glob("./posts/*.md");
 ---
 
 <Layout title="Home">
-  <div
-    class="flex md:flex-row flex-col-reverse gap-6 items-center justify-evenly border dark:border-gray-800 p-6 rounded-md dark:bg-gray-800 bg-gray-100 shadow"
-  >
-    <div class="flex flex-col space-y-4">
-      <h2 class="text-4xl max-w-xl text-center md:text-left">
-        Explore technologies and build something amazing by utilizing them
-      </h2>
-    </div>
-
-    <div class="w-80 h-80 flex-none">
-      <img
-        src="https://avatars.githubusercontent.com/u/57381638?v=4"
-        alt="Harsh Mangalam"
-        class="w-full h-full rounded-full"
-      />
-    </div>
-  </div>
-
-  <div class="mt-16">
-    <h3 class="text-3xl font-semibold">Featured Posts</h3>
-    <GridLayout className="mt-8">
-      {[...new Array(3)].map((post) => <BlogPost />)}
-    </GridLayout>
-  </div>
+  <GridLayout className="mt-8">
+    {posts.map((post) => <BlogPost {...post.frontmatter} url={post.url} />)}
+  </GridLayout>
 </Layout>
