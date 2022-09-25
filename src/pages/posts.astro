@@ -1,0 +1,13 @@
+---
+import BlogPost from "../components/BlogPost";
+import GridLayout from "../layouts/GridLayout.astro";
+import Layout from "../layouts/Layout.astro";
+
+const posts = await Astro.glob("./posts/*.md");
+---
+
+<Layout title="Home">
+  <GridLayout className="mt-8">
+    {posts.map((post) => <BlogPost {...post.frontmatter} url={post.url} />)}
+  </GridLayout>
+</Layout>

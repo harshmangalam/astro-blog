@@ -12,18 +12,18 @@ const links = [
     name: "Blog",
     href: "/blog",
   },
-  {
-    name: "Projects",
-    href: "/projects",
-  },
-  {
-    name: "Snippets",
-    href: "/snippets",
-  },
-  {
-    name: "About",
-    href: "/about",
-  },
+  // {
+  //   name: "Projects",
+  //   href: "/projects",
+  // },
+  // {
+  //   name: "Snippets",
+  //   href: "/snippets",
+  // },
+  // {
+  //   name: "About",
+  //   href: "/about",
+  // },
 ];
 ---
 
@@ -36,7 +36,7 @@ const links = [
     </a>
   </div>
 
-  <!-- <ul class="hidden md:flex items-center space-x-4">
+  <ul class="hidden md:flex items-center space-x-4">
     {
       links.map((link) => (
         <li>
@@ -51,7 +51,7 @@ const links = [
         </li>
       ))
     }
-  </ul> -->
+  </ul>
   <div class="flex items-center space-x-4">
     <ThemeToggler client:load />
     <div class="md:hidden">
